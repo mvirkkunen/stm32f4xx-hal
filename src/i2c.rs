@@ -964,7 +964,9 @@ where
             scldel = 3;
         }
 
-        // Enable I2C signal generator, and configure I2C for 400KHz full speed
+        // XXX: Verify FastMode+ timings
+
+        // Enable I2C signal generator, and configure I2C for configured speed
         self.i2c.timingr.write(|w| unsafe {
             w.presc()
                 .bits(presc)
